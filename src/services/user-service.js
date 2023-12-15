@@ -16,6 +16,33 @@ class UserService {
         }
 
     }
+
+        async signIn(data){
+        try {
+            const email = data.email;
+            const currentPassword = data.password;
+            const user = await this.userRepository.findBy({email:email});
+ 
+            if(!user){
+                throw{
+                    message: 'No user found'
+                }
+            }
+            if(!user.comparePassword(currentPassword)){
+                throw{
+                    message: 'Incorrect password'
+                }
+            }
+            console.log("User succefully signed in")
+           
+         
+            
+        } catch (error) {
+            throw error;
+        }
+
+    }
+
 }
 
 module.exports= {UserService}
