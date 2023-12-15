@@ -1,6 +1,5 @@
-const {  TweetRepository, HashtagRepository } = require("../repositories") 
-
-
+const { TweetRepository}  = require ("../repositories")
+const { HashtagRepository } = require("../repositories")
 
 class TweetService {
     constructor() {
@@ -45,5 +44,5 @@ class TweetService {
 }
 
 
-module.exports =TweetService;
+module.exports = {TweetService};
    

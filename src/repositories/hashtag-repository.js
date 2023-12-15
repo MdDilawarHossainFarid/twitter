@@ -1,5 +1,5 @@
 const  Hashtag = require("../models");
-const CrudRepository = require("./crud-repository");
+const {CrudRepository} = require("./crud-repository");
 
 
 class HashtagRepository extends  CrudRepository {
@@ -59,4 +59,4 @@ class HashtagRepository extends  CrudRepository {
 }
 
 
-module.exports =  HashtagRepository;
+module.exports = { HashtagRepository};

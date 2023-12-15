@@ -1,5 +1,6 @@
 const { CrudRepository } = require("./crud-repository");
-const {Tweet} = require("../models")
+const Tweet = require("../models");
+
 
 
 
@@ -59,4 +60,4 @@ class  TweetRepository extends CrudRepository {
 
 
 
-module.exports = TweetRepository ;
+module.exports = {TweetRepository} ;
