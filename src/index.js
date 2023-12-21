@@ -1,7 +1,9 @@
 // Basic server configuration
 
 const express = require("express");
-const bodyParser = require("body-parser")
+const bodyParser = require("body-parser");
+const passport =require("passport");
+const {PassportAuth} = require("./middlewares")
 
 const { ServerConfig, Logger,Connect } = require("./config");
 
@@ -11,6 +13,9 @@ const app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+
+app.use(passport.initialize());
+PassportAuth(passport)
 
 app.use("/api", apiRoutes);
 
